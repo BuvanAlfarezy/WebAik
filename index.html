@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tata Cara Sholat Lengkap</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Nunito', sans-serif;
+      background: linear-gradient(to right, #d4e5f5, #8ddbf3);
+      margin: 0;
+      padding: 20px;
+      color: #333;
+    }
+    .container {
+      max-width: 900px;
+      margin: auto;
+      background: #ffffff;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 40px;
+      color: #2c3e50;
+    }
+    .step {
+      margin-bottom: 40px;
+      border-bottom: 1px solid #95b8ed;
+      padding-bottom: 30px;
+    }
+    .step:last-child {
+      border-bottom: none;
+    }
+    .step p {
+      font-size: 22px;
+      font-weight: bold;
+      color: #2980b9;
+      margin-bottom: 10px;
+    }
+    .btn {
+      background-color: #2697ec;
+      color: white;
+      padding: 10px 25px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .btn:hover {
+      background-color: #072c49;
+    }
+    .step img {
+      width: 280px;
+      height: auto;
+      margin-top: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      display: none;
+    }
+    .description {
+      display: none;
+      margin-top: 15px;
+      font-style: italic;
+      background-color: #ecf0f1;
+      padding: 15px;
+      border-left: 4px solid #2980b9;
+      border-radius: 5px;
+    }
+    .step img {
+        width: 280px;
+        height: auto;
+        margin-top: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        display: none;
+        border: 3px solid #b7def8;
+    }
+    .visible {
+      display: block !important;
+    }
+    @media (max-width: 600px) {
+      .step img {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Tata Cara Sholat Lengkap</h1>
+
+    <div class="step">
+      <p>Membaca Niat Sholat</p>
+      <button class="btn" onclick="playStep(0)">Lihat Gerakan & Bacaan</button>
+      <img id="img0" src="images/niat.jpg" alt="Niat Sholat">
+      <div id="desc0" class="description">Niat dilakukan dalam hati sebelum memulai sholat, menunjukkan niat ikhlas karena Allah.</div>
+      <audio id="audio0" src="audio/niat.mp3"></audio>
+    </div>
+
+    <div class="step">
+      <p>Takbiratul Ihram</p>
+      <button class="btn" onclick="playStep(1)">Lihat Gerakan & Bacaan</button>
+      <img id="img1" src="images/takbir.jpg" alt="Takbiratul Ihram">
+      <div id="desc1" class="description">Mengangkat kedua tangan sambil mengucapkan "Allahu Akbar" sebagai tanda memulai sholat.</div>
+      <audio id="audio1" src="audio/takbir.mp3"></audio>
+    </div>
+
+    <div class="step">
+      <p>Membaca Doa Iftitah, Al-Fatihah, dan Surah Pendek</p>
+      <button class="btn" onclick="playStep(2)">Lihat Gerakan & Bacaan</button>
+      <img id="img2" src="images/alfatiha.jpg" alt="iftitah">
+      <div id="desc2" class="description"> 
+    
+    <p style="color: black;font-size: large;">Bacaan Iftitah </p>
+
+    <p style="color: black;font-size: medium;">اَللّهُمَّ باَعِدْ بَيْنِى وَبَيْنَ خَطَاياَيَ كَمَا باَعَدْتَ بَيْنَ الْمَشْرِقِ وَالْمَغْرِبِاَللّهُمَّ نَقِّنِى مِنَ الْخَطَاياَ كَماَ يُنَقَّى الثَّوْبُ اْلأَبْيَضُ مِنَ الدَّنَسِاَللّهُمَّ اغْسِلْ خَطَاياَيَ باِلْماَءِ وَالثَّلْجِ وَالْبَرَدِ. 
+ 
+    <p style="color: black;font-size: medium;">Allaahumma baa’id bainii wabainaa khotoo yaa ya kamaa baa ‘adta bainal masyriqi wal maghrib. Allaahumma naqqinii minal khotoo yaa kamaa yunqqots tsaubul abyadhuu minaddanas. Allaahummaghsil khotoo yaa ya bil maa i wats tsalji walbarod.</p>
+ 
+    Artinya : 
+    “Ya Allah, jauhkanlah antara diriku dan di antara kesalahan-kesalahanku sebagaimana Engkau jauhkan antara timur dan barat. 
+    Ya Allah, bersihkanlah aku dari kesalahan sebagaimana dibersihkannya kain putih dari kotoran. Ya Allah, cucilah kesalahan-kesalahanku dengan air, salju dan embun.” 
+    <p style="color: black;font-size: large;">Bacaan Al-fatihah </p>
+    
+    <p style="color: black;font-size: medium;">بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ اَلْحَمْدُ لِلّٰهِ رَبِّ الْعٰلَمِيْنَۙ الرَّحْمٰنِ الرَّحِيْمِۙ مٰلِكِ يَوْمِ الدِّيْنِۗ اِيَّاكَ نَعْبُدُ وَاِيَّاكَ نَسْتَعِيْنُۗ اِهْدِنَا الصِّرَاطَ الْمُسْتَقِيْمَۙ صِرَاطَ الَّذِيْنَ اَنْعَمْتَ عَلَيْهِمْ ەۙ غَيْرِ الْمَغْضُوْبِ عَلَيْهِمْ وَلَا الضَّاۤلِّيْنَࣖ </p>
+    
+    <p style="color: black;font-size: medium;">bismillâhir-raḫmânir-raḫîm al-ḫamdu lillâhi rabbil-‘âlamîn ar-raḫmânir-raḫîm mâliki yaumid-dîn iyyâka na‘budu wa iyyâka nasta‘în ihdinash-shirâthal-mustaqîm shirâthalladzîna an‘amta ‘alaihim ghairil-maghdlûbi ‘alaihim wa ladl-dlâllîn </p>
+    
+    Artinya: Dengan nama Allah Yang Maha Pengasih lagi Maha Penyayang. Segala puji bagi Allah, Tuhan semesta alam Yang Maha Pengasih lagi Maha Penyayang, Pemilik hari Pembalasan. Hanya kepada Engkaulah kami menyembah dan hanya kepada Engkaulah kami memohon pertolongan. Bimbinglah kami ke jalan yang lurus, (yaitu) jalan orang-orang yang telah Engkau beri nikmat, bukan (jalan) mereka yang dimurkai dan bukan (pula jalan) orang-orang yang sesat.</p>
+   
+    <p style="color: black;font-size: large;">Bacaan surah: Surat Al-Ikhlas</p>
+
+    <p style="color: black;font-size: medium;">قُلْ هُوَ اللّٰهُ اَحَدٌۚ اَللّٰهُ الصَّمَدُۚ لَمْ يَلِدْ وَلَمْ يُوْلَدْۙ وَلَمْ يَكُنْ لَّهٗ كُفُوًا اَحَدٌ ࣖ</p>
+
+    <p style="color: black;font-size: medium;">Qul huwallāhu aḥad(un). Allāhuṣ-ṣamad(u). Lam yalid wa lam yūlad. Wa lam yakul lahū kufuwan aḥad(un). </p>
+
+    Artinya: Katakanlah (Nabi Muhammad), “Dialah Allah Yang Maha Esa. Allah tempat meminta segala sesuatu. Dia tidak beranak dan tidak pula diperanakkan serta tidak ada sesuatu pun yang setara dengan-Nya.” 
+    </div>
+      <audio id="audio2" src="audio/iqtidal.mp3"></audio>
+    </div>
+
+
+    <div class="step">
+      <p>Takbir</p>
+      <button class="btn" onclick="playStep(3)">Lihat Gerakan & Bacaan</button>
+      <img id="img3" src="images/takbir.jpg" alt="Rukuk">
+      <div id="desc3" class="description">Mengangkat kedua tangan sambil mengucapkan "Allahu Akbar".</div>
+      <audio id="audio3" src="audio/rukuk.mp3"></audio>
+    </div>
+
+    <div class="step">
+      <p>Rukuk</p>
+      <button class="btn" onclick="playStep(4)">Lihat Gerakan & Bacaan</button>
+      <img id="img4" src="images/ruku.jpg" alt="Rukuk">
+      <div id="desc4" class="description"><p style="color: black;font-size: medium;">سُبْحَانَكَ اللّهُمَّ رَبَّناَ وَبِحَمْدِكَ اَللّهُمَّ اغْفِرْلِى </p>
+      <p style="color: black;font-size: medium;">Subhaanaka allaahuma robbanaa wabihamdika allaahumaghfirlii.</p>
+ 
+      Artinya:  
+      Maha suci Engkau, ya Allah, dan dengan memuji kepada Engkau, ya Allah, aku memohon ampun.</div>
+      <audio id="audio3" src="audio/rukuk.mp3"></audio>
+    </div>
+    
+    <div class="step">
+      <p>Takbir</p>
+      <button class="btn" onclick="playStep(5)">Lihat Gerakan & Bacaan</button>
+      <img id="img5" src="images/takbir.jpg" alt="Rukuk">
+      <div id="desc5" class="description">Mengangkat kedua tangan sambil mengucapkan "Allahu Akbar".</div>
+      <audio id="audio3" src="audio/rukuk.mp3"></audio>
+    </div>
+
+    <div class="step">
+      <p>I'tidal</p>
+      <button class="btn" onclick="playStep(6)">Lihat Gerakan & Bacaan</button>
+      <img id="img6" src="images/niat.jpg" alt="I'tidal">
+      <div id="desc6" class="description"><p style="color: black;font-size: medium;">سَمِعَ اللهُ لِمَنْ حَمِدَهُ رَبَّناَ وَلَكَ الْحَمْدُ حَمْدًا كَثِيْرًا طَيِّبًا مُبَارَكًافِيْهِ </p>
+ 
+      <p style="color: black;font-size: medium;">Sami'allaahu liman hamidah. Rabbanaa wa lakal hamdu hamdan katsiran thayyiban mubaarokan fiihi.</p>
+ 
+      Artinya: "Allah mendengar orang yang memujinya. Ya Tuhanku, bagimulah segala puji-pujian yang banyak, baik dan memberkati." 
+    </div>
+      <audio id="audio2" src="audio/iqtidal.mp3"></audio>
+    </div>
+
+    <div class="step">
+      <p>Sujud</p>
+      <button class="btn" onclick="playStep(7)">Lihat Gerakan & Bacaan</button>
+      <img id="img7" src="images/sujud.jpg" alt="Sujud">
+      <div id="desc7" class="description"><p style="color: black;font-size: medium;">سُبْحَانَكَ اللهُمَّ رَبَّنَا وَبِحَمْدِكَ اللهُمَّ اغْفِرْلِيْ </p>
+ 
+      <p style="color: black;font-size: medium;">Subhaanakallah humma rabbanaa wa bihamdikallahummaghfirlii.</p>
+      Artinya: "Mahasuci Engkau, Ya Allah, dan dengan memuji kepada Engkau, Ya Allah, aku memohon ampun." 
+    </div>
+      <audio id="audio4" src="audio/sujud.mp3"></audio>
+    </div>
+
+    <div class="step">
+      <p>Duduk Diantara Dua Sujud</p>
+      <button class="btn" onclick="playStep(8)">Lihat Gerakan & Bacaan</button>
+      <img id="img8" src="images/duduk diantara sujud d.jpg" alt="Sujud">
+      <div id="desc8" class="description">Sujud adalah berserah diri dengan menyentuhkan dahi ke tanah sambil membaca "Subhaana rabbiyal a'laa".</div>
+      <audio id="audio4" src="audio/sujud.mp3"></audio>
+    </div>
+
+    <div class="step">
+      <p>Sujud</p>
+      <button class="btn" onclick="playStep(9)">Lihat Gerakan & Bacaan</button>
+      <img id="img9" src="images/sujud.jpg" alt="Sujud">
+      <div id="desc9" class="description">Sujud adalah berserah diri dengan menyentuhkan dahi ke tanah sambil membaca "Subhaana rabbiyal a'laa".</div>
+      <audio id="audio4" src="audio/sujud.mp3"></audio>
+    </div>
+
+    
+   <div class="step">
+      <p>Duduk Tahiyat Awal</p>
+      <button class="btn" onclick="playStep(10)">Lihat Gerakan & Bacaan</button>
+      <img id="img10" src="images/duduk tahiyat awal.jpg" alt="Rukuk">
+      <div id="desc10" class="description">Mengangkat kedua tangan sambil mengucapkan "Allahu Akbar".</div>
+      <audio id="audio3" src="audio/rukuk.mp3"></audio>
+    </div>
+
+   <div class="step">
+      <p>Takbir</p>
+      <button class="btn" onclick="playStep(11)">Lihat Gerakan & Bacaan</button>
+      <img id="img11" src="images/takbir.jpg" alt="Rukuk">
+      <div id="desc11" class="description">Mengangkat kedua tangan sambil mengucapkan "Allahu Akbar".</div>
+      <audio id="audio3" src="audio/rukuk.mp3"></audio>
+    </div>
+
+    <div class="step">
+      <p>Bersedekap</p>
+      <button class="btn" onclick="playStep(12)">Lihat Gerakan & Bacaan</button>
+      <img id="img12" src="images/alfatiha.jpg" alt="iftitah">
+      <div id="desc12" class="description">Membaca al-fatihah dan surah pendek. </div>
+      <audio id="audio2" src="audio/iqtidal.mp3"></audio>
+    </div>
+
+     <div class="step">
+      <p>Takbir</p>
+      <button class="btn" onclick="playStep(13)">Lihat Gerakan & Bacaan</button>
+      <img id="img13" src="images/takbir.jpg" alt="Rukuk">
+      <div id="desc13" class="description">Mengangkat kedua tangan sambil mengucapkan "Allahu Akbar".</div>
+      <audio id="audio3" src="audio/rukuk.mp3"></audio>
+    </div>
+
+    <div class="step">
+      <p>Rukuk</p>
+      <button class="btn" onclick="playStep(14)">Lihat Gerakan & Bacaan</button>
+      <img id="img14" src="images/ruku.jpg" alt="Rukuk">
+      <div id="desc14" class="description">Rukuk dilakukan dengan membungkuk, tangan di lutut, membaca doa "Subhaana rabbiyal 'azhiim".</div>
+      <audio id="audio3" src="audio/rukuk.mp3"></audio>
+    </div>
+
+    <div class="step">
+      <p>Takbir</p>
+      <button class="btn" onclick="playStep(15)">Lihat Gerakan & Bacaan</button>
+      <img id="img15" src="images/takbir.jpg" alt="Rukuk">
+      <div id="desc15" class="description">Mengangkat kedua tangan sambil mengucapkan "Allahu Akbar".</div>
+      <audio id="audio3" src="audio/rukuk.mp3"></audio>
+    </div>
+
+    
+    <div class="step">
+      <p>I'tidal</p>
+      <button class="btn" onclick="playStep(16)">Lihat Gerakan & Bacaan</button>
+      <img id="img16" src="images/niat.jpg" alt="I'tidal">
+      <div id="desc16" class="description">I'tidal adalah berdiri tegak setelah rukuk, membaca doa dengan khusyuk.</div>
+      <audio id="audio2" src="audio/iqtidal.mp3"></audio>
+    </div>
+
+    <div class="step">
+      <p>Sujud</p>
+      <button class="btn" onclick="playStep(17)">Lihat Gerakan & Bacaan</button>
+      <img id="img17" src="images/sujud.jpg" alt="Sujud">
+      <div id="desc17" class="description">Sujud adalah berserah diri dengan menyentuhkan dahi ke tanah sambil membaca "Subhaana rabbiyal a'laa".</div>
+      <audio id="audio4" src="audio/sujud.mp3"></audio>
+    </div>
+
+    <div class="step">
+      <p>Duduk Diantara Dua Sujud</p>
+      <button class="btn" onclick="playStep(18)">Lihat Gerakan & Bacaan</button>
+      <img id="img18" src="images/duduk diantara sujud d.jpg" alt="Sujud">
+      <div id="desc18" class="description">Sujud adalah berserah diri dengan menyentuhkan dahi ke tanah sambil membaca "Subhaana rabbiyal a'laa".</div>
+      <audio id="audio4" src="audio/sujud.mp3"></audio>
+    </div>
+
+    <div class="step">
+      <p>Sujud</p>
+      <button class="btn" onclick="playStep(19)">Lihat Gerakan & Bacaan</button>
+      <img id="img19" src="images/sujud.jpg" alt="Sujud">
+      <div id="desc19" class="description">Sujud adalah berserah diri dengan menyentuhkan dahi ke tanah sambil membaca "Subhaana rabbiyal a'laa".</div>
+      <audio id="audio4" src="audio/sujud.mp3"></audio>
+    </div>
+
+    <div class="step">
+      <p>Duduk Tahiyat Akhir</p>
+      <button class="btn" onclick="playStep(20)">Lihat Gerakan & Bacaan</button>
+      <img id="img20" src="images/duduk tahiyat akhir.jpg" alt="Rukuk">
+      <div id="desc20" class="description">Mengangkat kedua tangan sambil mengucapkan "Allahu Akbar".</div>
+      <audio id="audio3" src="audio/rukuk.mp3"></audio>
+    </div>
+
+    <div class="step">
+      <p>Mengucap Salam</p>
+      <button class="btn" onclick="playStep(21)">Lihat Gerakan & Bacaan</button>
+      <img id="img21" src="images/mengucap salam kanan.jpg" alt="Rukuk">
+      <div id="desc21" class="description">Mengangkat kedua tangan sambil mengucapkan "Allahu Akbar".</div>
+      <audio id="audio3" src="audio/rukuk.mp3"></audio>
+    </div>
+
+    <div class="step">
+      <p>Mengucap Salam</p>
+      <button class="btn" onclick="playStep(22)">Lihat Gerakan & Bacaan</button>
+      <img id="img22" src="images/mengucap salam kiri.jpg" alt="Rukuk">
+      <div id="desc22" class="description">Mengangkat kedua tangan sambil mengucapkan "Allahu Akbar".</div>
+      <audio id="audio3" src="audio/rukuk.mp3"></audio>
+    </div>
+    
+    <footer>
+    <p>&copy; 2023 Tata Cara Sholat Lengkap. Semua hak dilindungi.</p>
+  </footer>
+  
+  <script>
+    function playStep(index) {
+      const audio = document.getElementById('audio' + index);
+      const desc = document.getElementById('desc' + index);
+      const img = document.getElementById('img' + index);
+
+      const allDescriptions = document.querySelectorAll('.description');
+      const allImages = document.querySelectorAll('.step img');
+      allDescriptions.forEach(d => d.classList.remove('visible'));
+      allImages.forEach(i => i.style.display = 'none');
+
+      if (desc) desc.classList.add('visible');
+      if (img) img.style.display = 'block';
+
+      if (audio) {
+        audio.currentTime = 0;
+        audio.play();
+      }
+    }
+  </script>
+</body>
+</html>
