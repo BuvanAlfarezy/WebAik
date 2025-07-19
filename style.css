@@ -30,7 +30,7 @@ body {
 }
 
 .logo {
-  height: 40px;
+  height: 50px;
   width: auto;
 }
 
@@ -182,14 +182,16 @@ body {
   }
 
   .sidebar {
-    position: absolute;
+    position: fixed;
     top: 60px;
     left: 0;
     width: 250px;
-    height: calc(100% - 60px);
+    height: calc(100vh - 60px);
     background-color: white;
     transform: translateX(-100%);
     z-index: 999;
+    overflow-y: auto; /* scroll kalau konten banyak */
+    transition: transform 0.3s ease;
   }
 
   .sidebar.active {
@@ -319,21 +321,4 @@ audio {
 .referensi {
   font-size: 14px;
   color: #666;
-}
-
-.logo-container {
-  display: flex;
-  align-items: center;
-  gap: 12px; /* Jarak antara logo dan teks */
-}
-
-.logo {
-  height: 50px; /* atau sesuai kebutuhan */
-}
-
-.site-title {
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: #1d4ed8; /* Warna biru Muhammadiyah */
-  white-space: nowrap;
 }

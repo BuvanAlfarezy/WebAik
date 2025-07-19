@@ -12,14 +12,14 @@
 <body>
   <!-- Navbar -->
   <nav class="navbar">
-  <div class="nav-left">
-    <button id="toggleSidebar" class="toggle-button">☰</button>
-    <img src="images/111.png" alt="Logo" class="logo">
-    <div class="logo-text">
-      <h1 class="judul-app">Tata Cara Sholat</h1>
-      <p class="subjudul-app">Sesuai HPT Muhammadiyah</p>
-  </div>
-</nav>
+    <div class="nav-left">
+      <button id="toggleSidebar" class="toggle-button">☰</button>
+      <img src="images/111.png" alt="Logo" class="logo">
+      <div class="logo-text">
+        <h1 class="judul-app">Tata Cara Sholat</h1>
+        <p class="subjudul-app">Sesuai HPT Muhammadiyah</p>
+      </div>
+  </nav>
   <div class="layout">
     <aside class="sidebar">
       <h2>Gerakan Sholat</h2>
@@ -56,7 +56,7 @@
           <img src="images/ddda.png" alt="takhir">
           <span>Tasyahud akhir</span>
         </li>
-        <li class="menu-item" onclick="loadContent('salam'),event">
+        <li class="menu-item" onclick="loadContent('salam',event)">
           <img src="images/s.png" alt="salam">
           <span>Salam</span>
         </li>
@@ -76,46 +76,43 @@
 
   <script>
     function loadContent(name, event = null) {
-  fetch(`data/${name}.html`)
-    .then(res => res.text())
-    .then(html => {
-      document.getElementById("main-content").innerHTML = html;
-    })
-    .catch(() => {
-      document.getElementById("main-content").innerHTML = "<div class='card'><p>Konten tidak ditemukan.</p></div>";
-    });
+      fetch(`data/${name}.html`)
+        .then(res => res.text())
+        .then(html => {
+          document.getElementById("main-content").innerHTML = html;
+        })
+        .catch(() => {
+          document.getElementById("main-content").innerHTML = "<div class='card'><p>Konten tidak ditemukan.</p></div>";
+        });
 
-  if (event) {
-    document.querySelectorAll(".menu-item").forEach(item => item.classList.remove("active"));
-    event.currentTarget.classList.add("active");
-  }
-}
+      if (event) {
+        document.querySelectorAll(".menu-item").forEach(item => item.classList.remove("active"));
+        event.currentTarget.classList.add("active");
+      }
+    }
 
   </script>
 
   <script>
-  const toggleBtn = document.getElementById('toggleSidebar');
-  const sidebar = document.querySelector('.sidebar');
+    const toggleBtn = document.getElementById('toggleSidebar');
+    const sidebar = document.querySelector('.sidebar');
 
-  toggleBtn.addEventListener('click', () => {
-    sidebar.classList.toggle('active');
+    toggleBtn.addEventListener('click', () => {
+      sidebar.classList.toggle('active');
 
-    // Opsional: Sembunyikan tombol saat sidebar terbuka
-    if (sidebar.classList.contains('active')) {
-      toggleBtn.style.display = 'none';
-    } else {
-      toggleBtn.style.display = 'block';
-    }
-  });
+      // Opsional: Sembunyikan tombol saat sidebar terbuka
+      toggleBtn.innerText = sidebar.classList.contains('active') ? '✖' : '☰';
+    });
 
-  // Sembunyikan sidebar jika klik di luar sidebar
-  document.addEventListener('click', function(e) {
-    if (!sidebar.contains(e.target) && e.target !== toggleBtn) {
-      sidebar.classList.remove('active');
-      toggleBtn.style.display = 'block';
-    }
-  });
-</script>
+    // Sembunyikan sidebar jika klik di luar sidebar
+    document.addEventListener('click', function (e) {
+      if (!sidebar.contains(e.target) && e.target !== toggleBtn) {
+        sidebar.classList.remove('active');
+        toggleBtn.style.display = 'block';
+      }
+    });
+  </script>
 
 </body>
+
 </html>
